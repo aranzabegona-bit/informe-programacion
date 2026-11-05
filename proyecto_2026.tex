@@ -1,0 +1,221 @@
+\documentclass[11pt,spanish]{article}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[dvips]{epsfig}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{babel,shapes.geometric}
+
+
+\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
+\definecolor{rosa}{RGB}{236,64,122}
+\definecolor{rosaoscuro}{RGB}{194,24,91}
+
+\pagestyle{empty}
+
+% \tarea{fila}{semana inicio}{semana fin}{texto}
+\newcommand{\tarea}[4]{%
+  \node[anchor=east, text width=7cm, align=left]
+       at (-0.2,#1-0.5) {\textbf{#1}\quad #4};
+  \filldraw[fill=rosa, draw=black]
+       ({2*#2-2},{#1-0.8}) rectangle ({2*#3},{#1-0.2});
+}
+\begin{document}
+
+\noindent
+\begin{minipage}[c]{0.15\textwidth}
+  \includegraphics[width=1.5cm]{uchile_full}
+\end{minipage}%
+\begin{minipage}[c]{0.65\textwidth}
+  \centering
+  {\Large\textbf{Computación y Programación}}\\[4mm]
+  {\Large\textbf{Proyecto Final, año 2026}}
+\end{minipage}%
+\begin{minipage}[c]{0.15\textwidth}
+  \raggedleft
+  \includegraphics[width=3cm]{logo_departamento_fisica.pdf}
+\end{minipage}
+
+\vspace{10mm}
+\section{Información general}
+
+\begin{tabular}{lcl}
+  T\'itulo del proyecto&:& \\
+  Fecha de entrega del proyecto &:& viernes 6 de noviembre de 2026\\
+  Área &:& Programación Científica \\
+\end{tabular}
+
+
+\vspace{30mm}
+
+\section{Participante(s)}
+
+Máximo de tres participantes.\\
+
+\begin{tabular}{lcl}
+  Nombre &:& Aranzazu Begoña Aretxabala Palacios \\
+  Correo electrónico &:&aranzazu.aretxabala@ug.uchile.cl \\
+  Carrera &:& Licenciatura en Física\\
+\end{tabular}
+
+\vspace{20mm}
+
+\begin{tabular}{lcl}
+  Nombre &:& \\
+  Correo electrónico &:& \\
+  Carrera &:& \\
+\end{tabular}
+
+\vspace{20mm}
+
+\begin{tabular}{lcl}
+  Nombre &:& \\
+  Correo electrónico &:& \\
+  Carrera &:& \\
+\end{tabular}
+
+\newpage
+\section{Resumen}
+
+\begin{framed}
+  \noindent Debe ser claro e informativo. Describa los principales
+  problemas que pretende atacar, incluyendo objetivos, metodología y
+  resultados esperados. Un buen resumen facilita una descripción
+  adecuada y entendimiento de lo que intenta lograr. El largo máximo
+  de esta sección es de esta página en tamaño de letra 11~pt.
+\end{framed}
+%aqui se escribe 
+\textbf{principales problemas a resolver:} 
+\begin{itemize}
+\item \textbf{comparar precios a mano es lento y poco eficaz:} Para encontrar la opción mas rentable hay que buscar el producto por varias tiendas e ir anotando el precios. El programa automatiza la búsqueda y reune todo en una tabla.
+\item \textbf{Información dispersa y los precios no tienen un formato en común:}Cada proveedor coloca nombres, unidades, capacidades y precio de manera distinta. Este programa extrae esos datos y los normaliza para que se pueda comprar de manera justa. Además parte del trabajo es identificar cuando dos publicaciones corresponden al mismo material (con misma capacidad y tipo) para no comprar productos distintos.
+\item \textbf{Precios cambian y la información se va desactualizando:} Una comparación hecha a mano solo sirve por ese día que se realiza la búsqueda. Con este proyecto se puede volver a ejecutar cuando se necesita y se puede obtener los precios vigentes e incluso se pude guardar un historial para ver como va variando el precio.
+\item \textbf{Presupuesto de estudiantes y laboratorios universitarios son limitados:} Las pequeñas diferencias de precios cuando se compran muchas unidades. Asi que encontrar la opción mas económica por producto ayuda a gastar mejor.   
+\end{itemize}
+\textbf{ items faltantes:}
+\begin{itemize}
+\item \textbf{objetivos:} El objetivo principal de este proyecto es desarrollar una herramienta en python que extraiga y compare, de manera automática, mediante \textit{" web scraping"} los precios y materiales de laboratorio en distintos proveedores para identificar la opción más conveniente.
+\item \textbf{Metodología:} Para este proyecto se usará \textit{Python} para extraer mediante \texttt{requests} y \texttt{BeautifulSoup} los precios de los materiales de laboratorio desde sitios proveedores chilenos. Los datos se comparan con \texttt{pandas}, se almacenan en CSV y se visualizan con \texttt{matplotlib} para visualizar la opción más conveniente por producto.
+\item \textbf{resultados esperados:} El principal resultado que queremos lograr es crear un programa funcional en \textit{Python} que extraiga el nombre, precio y disponibilidad de materiales de laboratorio desde los sitios web de proveedores chilenos seleccionados para poder obtener el producto deseado a un precio accesible. Además se espera que los gráficos generados con \texttt{matplotlib} se muestren de manera clara las diferencias de precios. Tambien queremos lograr una herramienta reutilizable que se pueda ejecutar de nuevo para actualizar los precios o ampliar la lista de productos
+\end{itemize}
+\newpage
+
+\section{Descripción del proyecto, marco teórico y revisión de la literatura}
+
+\begin{framed}
+  \noindent Esta sección debe incluir una presentación general del
+  problema a desarrollar, con un breve marco teórico. Describa los
+  aspectos novedosos que intentaron implementar y presente una
+  descripción del estado del arte en el tópico del proyecto. El largo
+  máximo de esta sección es de tres páginas en tamaño de letra 11~pt,
+  incluidas referencias.
+\end{framed}
+% Aqui se escribe
+Aqui se debe refenciar los papers usados ........
+\newpage
+
+\section{Objetivos}
+
+\begin{framed}
+  \noindent Especifique claramente sus objetivos principales y
+  objetivos secundarios. El largo máximo de esta sección es de esta
+  página, en tamaño de letra 11~pt.
+\end{framed}
+\subsection*{Objetivo Principal:} Es desarrollar una herramienta en \textit{Python} que extraiga y compare, mediante \textit{ web scraping}, los precios de materiales de laboratorio ofrecidos por diferentes proveedores chilenos, con el propósito de identificar la opción más económica para cada producto.
+\subsection*{Objetivos secundarios:} 
+\begin{itemize}
+\item Seleccionar los proveedores chilenos y verificar que sus sitios web permitan el \textit{scraping} según su archivo \texttt{robots.txt} y sus términos de uso.
+\item Programar la extracción automática del nombre, precio y la disponibilidad de cada producto, usando las bibliotecas de \texttt{requests} y \texttt{BeautifulSoup}.
+\item Limpiar y normalizar los datos obtenidos con \texttt{pandas} y almacenarlos en un archivo CSV. 
+\item Aplicar técnicas de \textit{scraping} responsable, espaciando las peticiones para no sobrecargar los servidores de los proveedores.
+\item Visualizar los resultados de la búsqueda mediante tablas y gráficos elaborados con \texttt{matplotlib}
+\item Documentar el código y los resultados, de modo que el programa se pueda reutilizar para actualizar los precios y ampliar la lista de los productos.
+\end{itemize} 
+\newpage
+
+\section{Metodología}
+
+\begin{framed}
+  \noindent Describa los métodos que planea utilizar para lograr los
+  objetivos planteados. Por ejemplo: técnicas numéricas, módulos, etc.
+  Justifique sus elecciones. El largo máximo de esta sección es dos páginas, en
+  tamaño de letra 11~pt.
+\end{framed}
+%aqui se escribe
+\newpage
+
+\section{Plan de trabajo}
+
+\begin{framed}
+  \noindent En la base de sus objetivos, indique las etapas y describa
+  las actividades que realizaron. El largo máximo de esta sección es de
+  esta página, en tamaño de letra 11~pt. Si es necesario, incorpore una
+  carta Gantt.
+\end{framed}
+El proyecto se desarrollará en seis semanas (entre el 2 de noviembre de 2026 y 11 de diciembre de 2026), y se organiza en las siguientes etapas, asociados a los objetivos planteados con anterioridad:
+\begin{itemize}
+\item \textbf{Redacción y entrega de propuesta definitiva (semana 1):} Se redactará la propuesta definitiva y se entregará el 6 de noviembre de 2026.
+\item \textbf{selección de proveedores y revisión de \texttt{robots.txt} (semanas 1--2):} Se eligirán de dos a cinco proveedores de materiales de laboratorios chilenos y se hará una lista acotada de productos a comprar. Además se revisará el archivo \texttt{robots.txt} y la estructura HTML de cada sitio para hacer viable el \textit{scraping}.
+\item \textbf{Programación de los \textit{scrspers} (semanas 2--3):} Se escribirán en \textit{Python} con \texttt{requests} y \texttt{BeautifulSoup}, los programas que van a extraer el nombre, precio y disponibilidad de cada producto. Se presentará el avance del proyecto el 20 de noviembre de 2026.
+\item \textbf{Limpieza y normalización de datos (semanas 3--4):} Con \texttt{pandas} se unificarán los precios, nombres y unidades. Además se guardarán en un archivo CSV.
+\item \textbf{Comparación de precios y gráficos (semanas 4--5):} Se compararán los precios entre los proveedores seleccionados anteriormente y se selecionará la opción más económica.También se elaborarán tablas y gráficos usando \texttt{matplotlib}.
+\item \textbf{Pruebas, corrección, documentación del código y presentación final (semanas 4--5):} Se probará el programa, se corregirán los errores y se documentará el código en un informe para finalmente presentarlo el 11 de diciembre de 2026.
+\end{itemize}
+\begin{figure}[h]
+\centering
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[x=1cm, y=-0.9cm, font=\small]
+
+  % Cuadrícula: verticales punteadas, horizontales sólidas
+  \foreach \x in {0,2,...,12} \draw[gray, dashed] (\x,0) -- (\x,9);
+  \foreach \y in {0,...,9}    \draw (0,\y) -- (12,\y);
+
+  % Encabezado de semanas
+  \foreach \w/\f in {1/{2--6 nov}, 2/{9--13 nov}, 3/{16--20 nov},
+                     4/{23--27 nov}, 5/{30 nov--4 dic}, 6/{7--11 dic}}
+    \node[align=center] at ({2*\w-1},-0.7) {\textbf{\w}\\[-2pt]\scriptsize \f};
+
+  \node[ font=\bfseries\large] at (-3.8,-0.7) {Descripción de las tareas};
+
+  % Tareas
+  \tarea{1}{1}{1}{Redacción y entrega de la propuesta definitiva}
+  \tarea{2}{1}{2}{Selección de proveedores y revisión de \texttt{robots.txt}}
+  \tarea{3}{2}{3}{Programación de los \textit{scrapers}}
+  \tarea{4}{3}{4}{Limpieza y normalización de datos}
+  \tarea{5}{4}{5}{Comparación de precios y gráficos}
+  \tarea{6}{5}{5}{Pruebas, corrección y documentación del código}
+  \tarea{7}{4}{5}{Redacción del informe final}
+  \tarea{8}{5}{6}{Preparación de la presentación}
+
+  % Hitos del curso
+  \node[anchor=east, text width=7cm, align=left] at (-0.2,8.5) {\textbf{9}\quad Hitos del curso};
+  \foreach \x/\t in {2/06/11, 6/20/11, 10/07/12, 11.5/10--11/12} {
+    \node[diamond, draw=black, fill=rosaoscuro, inner sep=2.5pt] at (\x,8.5) {};
+    \node[below, font=\scriptsize] at (\x,9) {\t};
+  }
+
+\end{tikzpicture}%
+}
+\caption{Carta Gantt del proyecto (tiempo en semanas).}
+\end{figure}
+\newpage
+
+\section{Información adicional}
+
+\begin{framed}
+  \noindent Indique información extra que usted considere relevante,
+  no incluida en las secciones anteriores, que puedan ayudar a la
+  revisión de este proyecto. El largo máximo de esta sección es de
+  esta página, en tamaño de letra 11~pt.
+\end{framed}
+% aqui se escribe
+\end{document}
